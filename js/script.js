@@ -1,23 +1,4 @@
-$(document).ready(function(){
-   $("#header").append(htmlRole.replace('%data%', biography.role));
-   $("#header").prepend(htmlName.replace('%data%', biography.name));
-
-   
-   for (i in biography.contact){
-       $("#contacts").append(htmlContact.replace('%label%', i).replace('%data%', biography.contact[i]));
-   }
-   
-   $("#intro").append(htmlPicture.replace('%data%', biography.pictureURL));
-   
-   $("#intro").append(htmlDescription.replace('%data%', biography.description));
-   if (biography.skills.length) {
-       $("#intro").append("<h4>SKILLS</h4>")
-        for(i in biography.skills) {
-            $("#intro").append(htmlSkills.replace('%data%', biography.skills[i]));
-
-        }
-   }
-   $("#education").append("<h3>EDUCATION</h3>");
+function displayEducation(){
    for (i in education){
        var oEducation = education[i];
        var $html = htmlEducation.replace('%school%', oEducation.school).replace('%year%', oEducation.year).replace('%location%', oEducation.location);
@@ -27,19 +8,19 @@ $(document).ready(function(){
            $html = $html.replace('%faculty%', "");
        }
        $("#education").append($html);
-   }
-   $("#work").append("<h3>WORKING EXPERIANCE</h3>");
+   }    
+}
+
+function displayWork(){
    work = work.reverse();
    for (i in work){
        var oWork = work[i];
        var $html = htmlWork.replace('%company%', oWork.company).replace('%year%', oWork.year).replace('%position%', oWork.position);
        $("#work").append($html);
-   }   
-   
-   
-   $("#contacts div").width((100/Object.keys(biography.contact).length)+"%");
+   }       
+}
 
-  $("#projects").append("<h3>PROJECTS</h3>");
+function displayProjects(){
    for (i in projects){
        var oProject = projects[i];
        var $html = htmlProjects.replace('%name%', oProject.name).replace('%technologies%', oProject.technologies);
@@ -54,6 +35,55 @@ $(document).ready(function(){
            $html = $html.replace('%description%', "");
        }       
        $("#projects").append($html);
-   }
+   }    
+}
 
+function displayCertificates(){
+    for (i in certificates){
+       var oCert = certificates[i];
+       var $html = htmlCertificates.replace('%school%', oCert.school).replace('%year%', oCert.year).replace('%name%', oCert.name);
+       $("#certificates").append($html);
+   }         
+}
+
+$(document).ready(function(){
+    var _bTabsHidden = true;
+    $("#content").prepend(htmlTabs).tabs();
+    if (typeof biography !== "undefined") {
+        biography.display();
+    } else {
+        $("#header").remove();
+        $("#intro").remove();        
+    }
+    if (work.length){
+        displayWork();
+        _bTabsHidden = false;
+    } else {
+        $("#work").remove();
+        $("#anchorWork").remove();
+    }
+    if (education.length) {
+        displayEducation();
+        _bTabsHidden = false;
+    } else {
+        $("#education").remove();
+        $("#anchorEducation").remove();
+    }
+    if (projects.length) {
+        displayProjects();
+        _bTabsHidden = false;
+    } else {
+        $("#projects").remove();
+        $("#anchorProjects").remove();
+    }
+    if (certificates.length) {
+        _bTabsHidden = false;
+        displayCertificates();
+    } else {
+        $("#certificates").remove();
+        $("#anchorCertificates").remove();
+    }
+    if (_bTabsHidden) {
+        $("#tabs").remove();
+    }
 });

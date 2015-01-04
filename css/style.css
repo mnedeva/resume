@@ -19,7 +19,7 @@ h1 {
     display: block;
     float:left;
     margin: 10px;
-    text-shadow: 0px 1px 1px black;
+    text-shadow: 0px 2px 2px black;
 }
 
 h2 {
@@ -47,7 +47,7 @@ h4 {
     clear: left;
     border: 1px solid black;
     min-width: 300px;
-    width: 30%;
+    width: 25%;
 }
 
 #header {
@@ -94,7 +94,7 @@ h4 {
     font-size: 20px;
 }
 
-#intro, #education, #work, #projects {
+#intro, #education, #work, #projects, #certificates {
     display: inline-block;
     margin: 0px 0px;
     padding: 10px;
@@ -107,15 +107,39 @@ h4 {
     border-top: 2px solid orange;
 }
 
-#education, #work, #projects {
+#education, #work, #projects, #certificates {
     background-color: #EFEFEF;
 }
 
-.education-content,.work-content, .projects-content {
+.education-content,.work-content, .projects-content, .certificates-content {
     padding-bottom: 10px;
-    border-top: 1px solid grey;
     width: 100%;
     display: inline-block;
     font-family: Arial;
     font-size: 13px;
 }
+
+.education-content:not(:first-child),.work-content:not(:first-child),
+.projects-content:not(:first-child), .certificates-content:not(:first-child){
+    border-top: 1px solid grey;
+}    
+#content {
+    display: block;
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+}
+
+#content ul {
+    background-color: white;
+    border-bottom:  1px solid orange;
+}
+
+
+.ui-tabs-active h3 {
+    color: black;
+}
+a:focus {
+    outline: none; 
+}
+

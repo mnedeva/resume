@@ -8,11 +8,32 @@ var biography = {
         "twitter": "@mnedeva",
         "location": "Sofia, Bulgaria"
     },
-    "description": "Communicative, team-oriented, open-minded, good public speaking,<br />initiative and outgoing person. Well-balanced personality, very cooperative, approachable and responsible.<br />Accomplished IT professional with more than 10 years practical experience. Skilled PHP developer familiar with the current web technology trends Subversion systems.",
+    "description": "Communicative, team-oriented, open-minded,initiative and outgoing person.<br />Well-balanced personality, very cooperative, approachable and responsible.<br />Accomplished IT professional with more than 10 years practical experience.<br />Skilled PHP developer familiar with the current web technology trends Subversion systems.",
     "skills": [
         "web development", "testing", "databases", "JAVA", "C#"
     ],
-    "pictureURL": "images/marina.jpg"
+    "pictureURL": "images/marina.jpg",
+    "display": function() {
+        $("#header").append(htmlRole.replace('%data%', biography.role));
+        $("#header").prepend(htmlName.replace('%data%', biography.name));
+
+
+        for (i in biography.contact){
+            $("#contacts").append(htmlContact.replace('%label%', i).replace('%data%', biography.contact[i]));
+        }
+
+        $("#intro").append(htmlPicture.replace('%data%', biography.pictureURL));
+
+        $("#intro").append(htmlDescription.replace('%data%', biography.description));
+        if (biography.skills.length) {
+            $("#intro").append("<h4>SKILLS</h4>")
+             for(i in biography.skills) {
+                 $("#intro").append(htmlSkills.replace('%data%', biography.skills[i]));
+
+             }
+        }   
+        $("#contacts div").width((100/Object.keys(biography.contact).length)+"%");   
+     }       
 }
 
 var education = [
@@ -26,7 +47,8 @@ var education = [
         "faculty": "Faculty of Mathematics and Informatics",        
         "year": 1997,
         "location": "Sofia, Bulgaria"        
-    }
+    },
+    
 ];
 
 var work = [
@@ -96,6 +118,27 @@ var projects = [
         "link": "http:/www.massivegood.org ",
         "technologies": "Symfony, Doctrine, JQuery",        
         "description": ""
-    },        
+    },    
+    {
+        "name": "PDI (Custom and Economy Print Calculator + Store)",
+        "link": "",
+        "technologies": "Company Framework, Prototype (js), osCommerce",        
+        "description": "The project was for calculating price, weight and shipping of variety of printing materials (notes, envelops, calendars, catalogs). The complexity of this project was the specific calculations for every one of them and understanding the process of printing industry."
+    },  
+    {
+        "name": "EFLIX.TV",
+        "link": "",
+        "technologies": "Company Framework",        
+        "description": "Project for renting Video DVDs and Games. The site had the fully automatic upgrade of all the information of new films and games, including pictures. The search was tagged to genre, actors, similar words, etc. It had the ability to generate barcode, addresses for delivery purpose. The customer old stock had to be transfer."
+    },  
 ];
+    
+var certificates = [
+    {
+        "name": "JAVA",
+        "school": "SoftAcad",
+        "year": 2014
+    }
+];
+    
 

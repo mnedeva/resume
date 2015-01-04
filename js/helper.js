@@ -29,3 +29,15 @@ var htmlProjects = "<div class='projects-content'>"+
                     "%technologies%<br />" + 
                     "%description% <br />" +
                     "</div>";            
+var htmlCertificates = "<div class='certificates-content'>"+
+                    "<h4>%name%</h4>" +
+                    "%year%<br />" + 
+                    "%school% <br />" +
+                    "</div>"; 
+
+var htmlTabs = "<ul id='tabs'>"+
+            "<li id='anchorEducation'><a href='#education'><h3>EDUCATION</h3></a></li>" + 
+            "<li id='anchorWork'><a href='#work'><h3>WORKING EXPERIANCE</h3></a></li>" + 
+            "<li id='anchorProjects'><a href='#projects'><h3>PROJECTS</h3></a></li>" + 
+            "<li id='anchorCertificates'><a href='#certificates'><h3>CERTIFICATIONS</h3></a></li>" + 
+            "</ul>" 
