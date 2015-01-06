@@ -1,0 +1,161 @@
+* {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;    
+    color: black;
+    
+    
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #999999;
+}
+
+h1 {
+    font-size: 40px;
+    color: orange;
+    font-weight: bold;
+    display: block;
+    float:left;
+    margin: 10px;
+    text-shadow: 0px 2px 2px black;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: normal;
+    display: block;
+    float:left;
+    margin: 10px;
+    clear: right;
+    line-height: 60px;
+}
+h3 {
+    font-size: 20px;  
+    margin-bottom: 0px;
+    color: orange;
+}
+h4 {    
+    color:#888888;
+}
+
+.profile-picture {
+    display: block;
+    float: left;
+    margin: 10px 10px 10px 0px;
+    clear: left;
+    border: 1px solid black;
+    min-width: 300px;
+    width: 25%;
+}
+
+#header {
+    border-bottom:  2px solid orange;
+    display: flex;
+}
+
+.contact-label {
+    color: orange;
+    font-weight: bold;
+    margin:  10px 10px 10px 0px;
+}
+
+.contact-data {
+    margin-right: 10px;
+    white-space: nowrap;
+        
+        
+}
+
+#contacts {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 100%;
+
+        
+}
+
+#contacts div {
+    display: inline-table;
+    float: left;  
+}
+
+.description {
+    font-size: 22px;
+    margin: 10px;    
+}
+
+.skills {
+    float:left;
+    display: block;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+#intro, #education, #work, #projects, #certificates {
+    display: inline-block;
+    margin: 0px 0px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    border-bottom: 2px solid orange;
+}
+
+#intro {
+    background-color: white;
+    border-top: 2px solid orange;
+}
+
+#education, #work, #projects, #certificates {
+    background-color: #EFEFEF;
+}
+
+.education-content,.work-content, .projects-content, .certificates-content {
+    padding-bottom: 10px;
+    width: 100%;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 13px;
+}
+
+.education-content:not(:first-child),.work-content:not(:first-child),
+.projects-content:not(:first-child), .certificates-content:not(:first-child){
+    border-top: 1px solid grey;
+}    
+#content {
+    display: block;
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+}
+
+#content ul {
+    background-color: white;
+    border-bottom:  1px solid orange;
+}
+
+
+.ui-tabs-active h3 {
+    color: black;
+}
+a:focus {
+    outline: none; 
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+}
+
+.info-window {
+    width: 200px;
+    height: 50px;
+}
+
+.map-title {
+    padding-bottom: 10px;
+    width: 100%;
+    display: inline-block;
+    background-color: white;
+}
